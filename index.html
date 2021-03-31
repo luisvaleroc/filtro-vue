@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+   
+</head>
+<body>
+    
+<div id="app">
+    <div class="menu">
+        <button v-bind:class="{ active: elementosActivo.includes('todos') }" v-on:click="filter('todos')">Todos</button>
+   <button v-on:click="filter('clasico')" v-bind:class="{ active: elementosActivo.includes('clasico') }">
+       Clasico
+   </button>   <button v-on:click="filter('finanzas')" v-bind:class="{ active: elementosActivo.includes('finanzas') }">
+       Finanzas
+   </button>
+    </div>
+  
+   <ul v-for='item in librosFiltrados'>
+    <li>{{ item.name }}</li>
+</ul>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>
